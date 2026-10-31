@@ -1,0 +1,116 @@
+==============================================================
+  BIOINFORMATICS EXERCISE — BLASTn
+  From Genome to Drug | Lesson II
+  Università degli Studi di Perugia
+==============================================================
+
+EXERCISE: Identify the Mystery Sequence
+
+A colleague just sent you this DNA sequence extracted from
+a human T cell sample. She has no idea what gene it is.
+Your mission: identify it using BLASTn.
+
+--------------------------------------------------------------
+MYSTERY SEQUENCE (copy everything between the dashes):
+--------------------------------------------------------------
+
+TACAGTGCATCAAGACACAGCTACTCCTGGGTGACAGAGGTTCAGGGCCAGCTCACTAAG
+TAGGCAGAAGTTTTTGACATATACTTTGAGAGATAAAGCAAGATTCTGTACCTCAACCTT
+CAGAATTTCCCCTACCACTCATTATAGTTCCGGAGCTATATAGCTCCTATCATTCTATCA
+TAACCTTAGAATACCAGAGAACATATCATCTCATCTAATTATCTCTTACTATATGTGAAA
+AAAATGAAGGACATGGGGGAAGTGTGACTTGCCCCAAATCACATATTTCATGGTAGAGCC
+AGGTCTTCTGTTTGTCATATCAGTGTTCTTCCTGCCACAACCATCTTGAAGAATCTATTT
+CTCAGTAAGAAAATATCTTTATGGAGAGTAGCTGGAAAACAGTTGAGAGATGGAGGGGAG
+GCTGGGGGTGTGGAGAGGGGAAGGGGTAAGTGATAGATTCGTTGAAGGGGGGAGAAAAGG
+CCGTGGGGATGAAGCTAGAAGGCAGAAGGGCTTGCCTGGGCTTGGCCATGAAGGAGCATG
+AGTTCACTGAGTTCCCTTTGGCTTTTCCATGCTAGCAATGCACGTGGCCCAGCCTGCTGT
+GGTACTGGCCAGCAGCCGAGGCATCGCCAGCTTTGTGTGTGAGTATGCATCTCCAGGCAA
+AGCCACTGAGGTCCGGGTGACAGTGCTTCGGCAGGCTGACAGCCAGGTGACTGAAGTCTG
+TGCGGCAACCTACATGATGGGGAATGAGTTGACCTTCCTAGATGATTCCATCTGCACGGGC
+ACCTCCAGTGGAAATCAAGTGAACCTCACTATCCAAGGACTGAGGGCCATGGACACGGGAC
+TCTACATCTGCAAGGTGGAGCTCATGTACCCACCGCCATACTACCTGGGCATAGGCAACGG
+AACCCAGATTTATGTAATTGGTGAGCAAAGCCATTTCACTGAGTTGACACCTGTTGCATTG
+CAGTCTTCTATGCACAAAAACAGTTTTGTTCCTTAATTTCAGGAGGTTTACTTTTAGGACT
+GTGGACATTCTCTTTAAGAGTTCTGTACCACATGGTAGCCTTGCTTATTGTGGGTGGCAAC
+CTTAATAGCATTCTGACTGTAAAATAAAATGATTTGGGGAAGTTGGGGCTCTCGCTCTGGA
+GTGCTAACCATCATGACGTTTGATCTGTACTTTTGATATGATATGATGCTCCTGGGGAAGT
+AGTCCCAAATAGCCAAACCTATTGGTGGGCTACCCATGCAATTTAGGGGTGG
+
+--------------------------------------------------------------
+
+STEP-BY-STEP INSTRUCTIONS
+--------------------------------------------------------------
+
+Step 1 — Go to:
+   blast.ncbi.nlm.nih.gov
+
+Step 2 — Click:
+   "Nucleotide BLAST (BLASTn)"
+
+Step 3 — Paste the mystery sequence into the query box
+
+Step 4 — Settings:
+   Database:  Nucleotide collection (nr/nt)
+   Organism:  leave empty
+   Program:   Highly similar sequences (megablast)
+
+Step 5 — Click BLAST and wait ~30 seconds
+
+
+QUESTIONS TO ANSWER
+--------------------------------------------------------------
+
+Q1. What gene did BLAST identify?
+    Write the gene name and the organism.
+
+Q2. What is the E-value of the top hit?
+    What does this E-value tell you about the match?
+
+Q3. What is the % identity and % query coverage?
+
+Q4. On which chromosome and at which position
+    does this gene reside?
+
+Q5. Scroll down the hit list.
+    Can you find the same gene in other species?
+    Which species appear, and what are their % identities?
+
+Q6. Look at the alignment shown by BLAST.
+    Can you identify any mismatches or gaps?
+    What could these represent biologically?
+
+Q7. Based on what you find — why do you think
+    this gene might be important in immunology
+    and cancer therapy?
+
+
+BONUS QUESTION
+--------------------------------------------------------------
+
+Go to the gene entry in NCBI Gene.
+Find the accession number of the mRNA (RefSeq).
+
+   What prefix does it start with?  ___________
+   What does that prefix tell you?  ___________
+   How many exons does this gene have?  ___________
+
+
+HINT (only read this if you are stuck after 10 minutes)
+--------------------------------------------------------------
+
+.
+.
+.
+.
+.
+.
+The sequence comes from a genomic region on chromosome 2.
+It encodes a protein expressed on the surface of T cells.
+This protein plays a critical role in regulating
+immune responses — and its blockade is the basis of
+one of the most important cancer therapies approved
+in the last 15 years.
+
+==============================================================
+   Good luck — the sequence does not lie.
+==============================================================

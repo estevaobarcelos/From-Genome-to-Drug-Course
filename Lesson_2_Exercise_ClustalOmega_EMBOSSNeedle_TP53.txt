@@ -1,0 +1,177 @@
+==============================================================
+  PRACTICAL EXERCISES — BLASTp & Clustal Omega
+  From Genome to Drug | Lesson II
+  Università degli Studi di Perugia
+==============================================================
+
+
+==============================================================
+  EXERCISE — Clustal Omega
+  Multiple sequence alignment: TP53 across five species
+==============================================================
+
+BACKGROUND
+--------------------------------------------------------------
+You want to identify which regions of TP53 are conserved
+across vertebrate evolution. Conserved positions are likely
+functionally essential — mutating them is lethal or causes
+disease. This is exactly the analysis researchers use to
+identify critical functional domains and hotspot mutation
+sites in cancer.
+
+TOOL
+--------------------------------------------------------------
+URL: www.ebi.ac.uk/Tools/msa/clustalo
+
+SEQUENCES TO USE
+--------------------------------------------------------------
+Copy ALL five sequences below and paste them together
+into the single input box of Clustal Omega.
+
+> Human (Homo sapiens) NP_001394193.1
+MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDP
+GPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSG
+TAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRC
+PHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYN
+YMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGE
+PHHELPPGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDA
+QAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD
+
+> Mouse (Mus musculus) NP_001120705.1
+MTAMEESQSDISLELPLSQETFSGLWKLLPPEDILPSPHCMDDLLLPQDVEEFFEGPSE
+ALRVSGAPAAQD PVTETPGPVAPAPATPWPLSSFVPSQKTYQGNYGFHLGFLQSGTAKS
+VMCTYSPPLNKLFCQLAKTCPVQLWVSATPPAGSRVRAMAIYKKSQHMTEVVRRCPHHЕ
+RCSDGDGLAPPQHLIRVEGNLYPEYLEDRQTFRHSVVVPYEPPEAGSEYTTIHYKYMCN
+SSCMGGMNRRPILTIITLEDSSGNLLGRDSFEVRVCACPGRDRRTEEENFRKKEVLCPE
+LPPGSAKRALPTCTSASPPQKKKPLDGEYFTLKIRGRKRFEMFRELNEALELKDAHATEE
+SGDSRAHSSLQPRAFQALIKEESPNC
+
+> Zebrafish (Danio rerio) NP_571452.1
+MEMPQSQTLEPPLSQETFDELWCLLPPENNALSPLPSQAMEDLMLNADDIEQWLSED
+PSPVEAPRAPEAAPAAAPAAPSWPLSSFVPSQKTFQGSYGFHLGFLHSGTAKSVTCTY
+SPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSD
+GLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGG
+MNRRPILTIITLEDSSGDLLGRSSFEVRVCACPGRDRRTEEENLRKKGQPQHELPPGSAK
+RALPNQTSSAPQKKRPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRAHS
+SHLRSKKAQSTSRHKKLMFKTEGPDSD
+
+> Chicken (Gallus gallus) NP_990150.1
+MEEPQSDLSEPPLS QETFSDLWKLLPENNVLSALPSQAMDDLMLSPDDIEQWFTEDP
+DAEAPRLPEAAPQVAPAPAAPTPAAPAPVPSWPLSSFVPSQKTFQGSYGFHLGFLHSGT
+AKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPH
+HERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMС
+NSSCMGGMNRRPILTIITLEDSSGDLLGRSSFEVRVCACPGRDRRTEEENLRKKGEPHHE
+LPPGSAKRALPNQTSSAPQKKRPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEP
+GGSRAHSSHLKSKKAQSTSRHKKLMFKTEGPDSD
+
+> Frog (Xenopus laevis) P70335.1
+MEEPQAELNAPPLNQETFNDLWTMLPPEDILSSLPAQAMDDLMLSPENIEQWFSEDPGP
+DETPRMPEASQPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTFQGSYGFHLGFLHSGTAKS
+VTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHЕR
+CSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSS
+CMGGMNRRPILTIITLEDSSGDLLGRSSFEVRVCACPGRDRRTEEENLRKKGEPHHELPAG
+SAKRALPNQTSSAPQKKRPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRA
+HSSHLKSKKGQSTSRHKKLMFKTEGPDSD
+
+SETTINGS
+--------------------------------------------------------------
+Sequence type:  Protein
+Output format:  ClustalW with character counts
+Click:          Submit
+
+QUESTIONS
+--------------------------------------------------------------
+
+Q1. Look at the alignment output.
+    The asterisk (*) marks perfectly conserved positions —
+    same amino acid in ALL five species.
+    Which region has the most asterisks?
+    N-terminal transactivation domain, DNA-binding domain,
+    tetramerization domain, or C-terminal regulatory domain?
+
+Q2. Download or view the phylogenetic tree
+    (Results → Phylogenetic Tree tab).
+    Which two species cluster closest together?
+    Does this match what you know about evolution?
+
+Q3. Find a column with an asterisk (*) in the DNA-binding
+    domain (approximately residues 102–292 of the human
+    sequence). What amino acid is it?
+    Why would this position be conserved across
+    400 million years of vertebrate evolution?
+
+Q4. Now find a column with no conservation symbol —
+    a column where all five species have different
+    amino acids. In which part of the protein is it located?
+    What does lack of conservation tell you about
+    the functional importance of that position?
+
+Q5. The N-terminal transactivation domain is the least
+    conserved region across species.
+    What does this suggest about the evolution of
+    TP53's regulatory interactions?
+
+Q6. Compare the DNA-binding domain across all five species.
+    Is this domain more conserved than the
+    N-terminal domain?
+    Explain why in terms of natural selection.
+
+Q7. Many cancer mutations in TP53 cluster in the
+    DNA-binding domain — at positions R175, G245, R248,
+    R249, R273, R282.
+    Look at these positions in your alignment.
+    Are they conserved across all five species?
+    What does this tell you about why mutations
+    here are so dangerous?
+
+EXPECTED RESULTS (read after answering)
+--------------------------------------------------------------
+Most conserved:  DNA-binding domain — direct contact
+                 with DNA response elements
+Least conserved: N-terminal transactivation domain
+                 and C-terminal regulatory domain
+Tree:            human and chicken cluster together,
+                 then mouse, then frog and zebrafish
+Hotspot positions: R175, R248, R273 are perfectly
+                 conserved across all five species —
+                 confirming their essential function
+Conclusion:      evolutionary constraint keeps the
+                 DNA-binding domain conserved; mutations
+                 here disrupt a function critical to
+                 all vertebrate life
+
+
+==============================================================
+  CONNECTING THE EXERCISES
+==============================================================
+
+After completing both exercises, answer these final questions:
+
+FINAL Q1.
+BLASTp identified the protein from its sequence alone.
+Clustal Omega showed you conservation across five species.
+Which tool gives you more information about which positions
+are functionally essential? Why?
+
+FINAL Q2.
+You found that the DNA-binding domain is the most conserved
+region in both exercises. This is also where most cancer
+mutations occur. Is this a coincidence?
+What is the relationship between evolutionary conservation,
+mutation hotspots, and drug target identification?
+
+FINAL Q3.
+Several drugs targeting mutant TP53 are currently in
+clinical trials — including APR-246 (eprenetapopt),
+which tries to restore the folding of mutant TP53.
+Based on your alignment results — why does it make sense
+to target the DNA-binding domain specifically?
+What problem might arise if the drug also affects
+conserved residues shared with other p53 family members
+(p63, p73)?
+
+==============================================================
+   Well done — you have just performed the same analysis
+   that researchers use to identify cancer mutation
+   hotspots and validate drug targets in TP53.
+==============================================================

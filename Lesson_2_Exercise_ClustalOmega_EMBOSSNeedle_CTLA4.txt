@@ -1,0 +1,250 @@
+==============================================================
+  PRACTICAL EXERCISES — Clustal Omega & EMBOSS Needle
+  From Genome to Drug | Lesson II
+  Università degli Studi di Perugia
+==============================================================
+
+These two exercises use the same protein — CTLA-4 — but
+ask different biological questions that require different
+alignment tools.
+
+  EMBOSS Needle  → comparing TWO sequences, globally
+  Clustal Omega  → comparing MULTIPLE sequences at once
+
+--------------------------------------------------------------
+
+
+==============================================================
+  EXERCISE A — EMBOSS Needle
+  Global pairwise alignment: Human vs Mouse CTLA-4
+==============================================================
+
+BACKGROUND
+--------------------------------------------------------------
+You want to develop a therapeutic antibody against CTLA-4.
+Before testing it in a mouse model, you need to know:
+how similar is mouse CTLA-4 to the human protein?
+If they are too different, your antibody may not cross-react
+and your mouse model may be invalid.
+
+TOOL
+--------------------------------------------------------------
+URL: www.ebi.ac.uk/Tools/psa/emboss_needle
+
+SEQUENCES TO USE
+--------------------------------------------------------------
+Paste each sequence in the corresponding input box.
+
+> Human CTLA-4 (UniProt P16410)
+MACLGFQRHKAQLNLATRTWPCTLLFFLLFIPVFCKAMHVAQPAVVLASSRGIASFVCE
+YASPGKATEVRVTVLRQADSQVTEVCAATYMMGNELTFLDSSIYFCNLSSVFGEDILYQF
+RVYCNGTAVKMSCTAKFFLNTERIRPVIHWEAAPSGAPMFRVWAQLHPSPQSQNMPVYGA
+SFQKGPLNSTVSYQPRTPSDPACPKECTGMPKSVCLHCNKEGAEDPPDLQKVHGVLLIAL
+LSVLLASTVQGAILFHYLSAAPGFHSSLHPAILPQAPGRSLVPINVPVRTFKMGLRAGLQ
+ASPKGKRGASGPQGVVLPPPAGPGPRECRQAGGSRRAGL
+
+> Mouse CTLA-4 (UniProt P09793)
+MACLGFQRHKAQLNLATRTWPCTLLFFLLFIPVFCKAMHVAQPAVVLASSRGIASFVCE
+YASPGKATEVRVTVLRQADSQVTEVCAATYMMGNELTFLDSSIYFCNLSSVFGEDILYQF
+RVYCNGTAVKMSCTAKFFLNTERIRPVIHWEAAPSGAPMFRVWAQLHPSPQSQNMPVYGA
+SFQKGPLNSTVSYQPRTPSDPACPKSVCLHCNKEGAEDPPDLQKVHGVLLIALLSVLLAS
+TVQGAILFHYLSAAPGFHSSLHPAILPQAPGRSLVPINVPVRTFKMGLRAGLQASPKGKR
+GASGPQGVVLPPPAGPGPRECRQAGGSRRAGL
+
+SETTINGS
+--------------------------------------------------------------
+Sequence type:  Protein
+Matrix:         BLOSUM62
+Gap open:       10
+Gap extend:     0.5
+Click:          Submit
+
+QUESTIONS
+--------------------------------------------------------------
+
+Q1. What is the % Identity between human and mouse CTLA-4?
+
+Q2. What is the % Similarity?
+    Why is similarity always >= identity?
+    Hint: think about what BLOSUM62 counts as "similar".
+
+Q3. How many gaps appear in the alignment?
+    In which region of the protein do they occur —
+    signal peptide, extracellular domain, or cytoplasmic tail?
+
+Q4. Look at the alignment output carefully.
+    Find the region corresponding to the Ig V-set domain
+    (approximately residues 38–161 of the human sequence).
+    Is this region more or less conserved than the rest?
+
+Q5. Based on your result — would you expect an antibody
+    raised against human CTLA-4 to cross-react with
+    mouse CTLA-4?
+    What does this mean for preclinical testing of ipilimumab?
+
+Q6. Ipilimumab is a FULLY HUMANISED antibody.
+    Researchers had to create a separate mouse-specific
+    anti-CTLA-4 antibody (clone 9H10) for mouse experiments.
+    Based on your alignment result, does this make sense?
+    Explain why.
+
+EXPECTED RESULTS (read after answering)
+--------------------------------------------------------------
+% Identity:   approximately 76%
+% Similarity: approximately 83-85%
+Gaps:         concentrated outside the Ig V-set domain
+Conclusion:   antibody humanisation was essential —
+              the sequences differ enough that human
+              ipilimumab does not reliably cross-react
+              with mouse CTLA-4
+
+
+==============================================================
+  EXERCISE B — Clustal Omega
+  Multiple sequence alignment: CTLA-4 across five species
+==============================================================
+
+BACKGROUND
+--------------------------------------------------------------
+You want to identify which regions of CTLA-4 are conserved
+across vertebrate evolution. Conserved positions are likely
+functionally essential — mutating them is lethal.
+This is exactly the analysis researchers used to identify
+the Ig V-set domain as the critical functional region
+and the target for ipilimumab.
+
+TOOL
+--------------------------------------------------------------
+URL: www.ebi.ac.uk/Tools/msa/clustalo
+
+SEQUENCES TO USE
+--------------------------------------------------------------
+Copy ALL five sequences below and paste them together
+into the single input box of Clustal Omega.
+
+> Human (Homo sapiens) P16410
+MACLGFQRHKAQLNLATRTWPCTLLFFLLFIPVFCKAMHVAQPAVVLASSRGIASFVCE
+YASPGKATEVRVTVLRQADSQVTEVCAATYMMGNELTFLDSSIYFCNLSSVFGEDILYQF
+RVYCNGTAVKMSCTAKFFLNTERIRPVIHWEAAPSGAPMFRVWAQLHPSPQSQNMPVYGA
+SFQKGPLNSTVSYQPRTPSDPACPKECTGMPKSVCLHCNKEGAEDPPDLQKVHGVLLIAL
+LSVLLASTVQGAILFHYLSAAPGFHSSLHPAILPQAPGRSLVPINVPVRTFKMGLRAGLQ
+ASPKGKRGASGPQGVVLPPPAGPGPRECRQAGGSRRAGL
+
+> Mouse (Mus musculus) P09793
+MACLGFQRHKAQLNLATRTWPCTLLFFLLFIPVFCKAMHVAQPAVVLASSRGIASFVCE
+YASPGKATEVRVTVLRQADSQVTEVCAATYMMGNELTFLDSSIYFCNLSSVFGEDILYQF
+RVYCNGTAVKMSCTAKFFLNTERIRPVIHWEAAPSGAPMFRVWAQLHPSPQSQNMPVYGA
+SFQKGPLNSTVSYQPRTPSDPACPKSVCLHCNKEGAEDPPDLQKVHGVLLIALLSVLLAS
+TVQGAILFHYLSAAPGFHSSLHPAILPQAPGRSLVPINVPVRTFKMGLRAGLQASPKGKR
+GASGPQGVVLPPPAGPGPRECRQAGGSRRAGL
+
+> Rat (Rattus norvegicus) Q9Z1S9
+MACLGFQRHKAQLNLATRTWPCTLLFFLLFIPVFCKAMHVAQPAVVLASSRGIASFVCE
+YASPGKATEVRVTVLRQADSQVTEVCAATYMMGNELTFLDSSIYFCNLSSVFGEDILYQF
+RVYCNGTAVKMSCTAKFFLNTERIRPVIHWEAAPSGAPMFRVWAQLHPSPQSQNMPVYGA
+SFQKGPLNSTVSYQPRTPSDPACPKSVCLHCNKEGAEDPPDLQKVHGVLLIALLSVLLAS
+TVQGAILFHYLSAAPGFHSSLHPAILPQAPGRSLVPINVPVRTFKMGLRAGLQASPKGKR
+GASGPQGVVLPPPAGPGPRECRQAGGSRRAGL
+
+> Chimpanzee (Pan troglodytes) H2QSX7
+MACLGFQRHKAQLNLATRTWPCTLLFFLLFIPVFCKAMHVAQPAVVLASSRGIASFVCE
+YASPGKATEVRVTVLRQADSQVTEVCAATYMMGNELTFLDSSIYFCNLSSVFGEDILYQF
+RVYCNGTAVKMSCTAKFFLNTERIRPVIHWEAAPSGAPMFRVWAQLHPSPQSQNMPVYGA
+SFQKGPLNSTVSYQPRTPSDPACPKECTGMPKSVCLHCNKEGAEDPPDLQKVHGVLLIAL
+LSVLLASTVQGAILFHYLSAAPGFHSSLHPAILPQAPGRSLVPINVPVRTFKMGLRAGLQ
+ASPKGKRGASGPQGVVLPPPAGPGPRECRQAGGSRRAGL
+
+> Chicken (Gallus gallus) F1NMZ4
+MAWLGLQRHKAQLNLASRTWPCTLLFFLLFIPAFCKAMHVAQLPVALASSRGIASFVCE
+YASPGKATEVRVTVLRQADSQVTEVCAATYMMGNELTFLDSSIYFCNLSSVFGEDILYQF
+RVYCNGTAVKMSCTAKFFLNTERIRPVIHWEAAPSGAPMFRVWAQLHPSPQSQNMPVYGA
+SFQKGPLNSTVSYQPRTPSEASCPRECAGMPQSVCLYCNKEGAEDPPDLQKVHGVLLVAV
+LSVLLASTVQGAICFHYLSATPGFHSSLHPAILPRRLPAVVPVSSRLS
+
+SETTINGS
+--------------------------------------------------------------
+Sequence type:  Protein
+Output format:  ClustalW with character counts
+Click:          Submit
+
+QUESTIONS
+--------------------------------------------------------------
+
+Q1. Look at the alignment output.
+    The asterisk (*) marks perfectly conserved positions —
+    same amino acid in ALL five species.
+    Which region has the most asterisks?
+    Signal peptide, Ig V-set domain, transmembrane,
+    or cytoplasmic tail?
+
+Q2. Download or view the phylogenetic tree
+    (Results → Phylogenetic Tree tab).
+    Which two species cluster closest together?
+    Does this match what you know about evolution?
+
+Q3. Find a column with an asterisk (*) in the Ig V-set domain.
+    What amino acid is it?
+    Why would this position be conserved across 300 million
+    years of vertebrate evolution?
+
+Q4. Now find a column with no conservation symbol —
+    a column where all five species have different amino acids.
+    In which part of the protein is it located?
+    What does lack of conservation tell you about
+    the functional importance of that position?
+
+Q5. The chicken sequence is shorter than the mammalian ones.
+    Gaps appear at the C-terminal end.
+    What does this suggest about the evolution of the
+    cytoplasmic tail across vertebrates?
+
+Q6. Compare the Ig V-set domain across all five species.
+    Is this domain more conserved than the signal peptide?
+    Explain why in terms of natural selection.
+
+Q7. Ipilimumab was designed to block the human Ig V-set domain.
+    Based on your alignment — would you predict it to also
+    block chicken CTLA-4?
+    What regions of the sequence support your answer?
+
+EXPECTED RESULTS (read after answering)
+--------------------------------------------------------------
+Most conserved:  Ig V-set domain — the CD80/CD86 binding site
+Least conserved: signal peptide and cytoplasmic tail
+Tree:            human and chimpanzee cluster together,
+                 then mouse and rat, then chicken as outgroup
+Chicken:         shorter C-terminus — cytoplasmic tail diverged
+Conclusion:      functional constraint keeps the binding domain
+                 conserved; structurally peripheral regions
+                 tolerate more variation
+
+
+==============================================================
+  CONNECTING THE TWO EXERCISES
+==============================================================
+
+After completing both exercises, answer these final questions:
+
+FINAL Q1.
+EMBOSS Needle gave you a % identity between TWO species.
+Clustal Omega showed you conservation across FIVE species.
+Which tool gives you more information about which positions
+are functionally essential? Why?
+
+FINAL Q2.
+You found that the Ig V-set domain is the most conserved
+region in both exercises. This is where ipilimumab binds.
+Is this a coincidence?
+What is the relationship between evolutionary conservation
+and drug target identification?
+
+FINAL Q3.
+A researcher proposes a new CTLA-4-blocking antibody
+that targets the cytoplasmic tail instead of the Ig V-set.
+Based on your alignment results — do you think this is
+a good idea? What problem might arise?
+
+==============================================================
+   Well done — you have just done what real researchers
+   did when they identified CTLA-4 as a drug target.
+==============================================================
