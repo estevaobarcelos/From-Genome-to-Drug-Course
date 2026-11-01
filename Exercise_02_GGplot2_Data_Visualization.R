@@ -1,6 +1,6 @@
 #===============================================================
-# DATA VISUALIZATION WITH GGPLOT2 — Grammar of Graphs
-# From Genome to Drug | Standalone Lesson
+# EXERCISE 02 - DATA VISUALIZATION WITH GGPLOT2 — Grammar of Graphs
+# From Genome to Drug | 2025
 # Università degli Studi di Perugia
 #===============================================================
 # Dataset: TCGA-LAML (The Cancer Genome Atlas — Acute Myeloid
