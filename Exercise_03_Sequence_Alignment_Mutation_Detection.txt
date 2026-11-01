@@ -1,0 +1,268 @@
+==============================================================
+  EXERCISE 03 — SEQUENCE ALIGNMENT & MUTATION DETECTION
+  From Genome to Drug | 2025
+  Università degli Studi di Perugia
+==============================================================
+
+This exercise uses EMBOSS Needle and BLASTp to answer
+two related biological questions using TP53 sequences:
+
+  PART A — Protein alignment:
+           Is Test_sequence_1 a known TP53 protein?
+           How similar is it to human and mouse TP53?
+
+  PART B — DNA mutation detection:
+           Does Test_sequence_2 carry a mutation
+           compared to the reference TP53 sequence?
+           What kind of mutation is it?
+
+--------------------------------------------------------------
+
+
+==============================================================
+  PART A — EMBOSS Needle
+  Pairwise protein alignment: Test_sequence_1 vs TP53
+==============================================================
+
+BACKGROUND
+--------------------------------------------------------------
+A colleague extracted this protein sequence from a tumor
+biopsy. She does not know which protein it is or which
+species it comes from. You will first identify it using
+BLASTp, then compare it against human and mouse TP53
+using EMBOSS Needle to quantify the similarity.
+
+--------------------------------------------------------------
+SEQUENCES
+--------------------------------------------------------------
+
+> Test_sequence_1 (unknown — to identify)
+MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPG
+PDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTA
+KSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHH
+ERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCN
+SSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELP
+PGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPG
+GSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD
+
+> TP53_Homo_sapiens (reference)
+MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGP
+DEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAKS
+VTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHЕRC
+SDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCM
+GGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELPPGSTK
+RALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRAHSS
+HLKSKKGQSTSRHKKLMFKTEGPDSD
+
+> TP53_Mus_musculus (mouse)
+MTAMEESQSDISLELPLSQETFSGLWKLLPPEDILPSPHCMDDLLLPQDVEEFFEGPSEAL
+RVSGAPAAQDPVTETPGPVAPAPATPWPLSSFVPSQKTYQGNYGFHLGFLQSGTAKSVMCT
+YSPPLNKLFCQLAKTCPVQLWVSATPPAGSRVRAMAIYKKSQHMTEVVRRCPHHERCSDGDG
+LAPPQHLIRVEGNLYPEYLEDRQTFRHSVVVPYEPPEAGSEYTTIHYKYMCNSSCMGGMNRR
+PILTIITLEDSSGNLLGRDSFEVRVCACPGRDRRTEEENFRKKEVLCPELPPGSAKRALPTCT
+SASPPQKKKPLDGEYFTLKIRGRKRFEMFRELNEALELKDAHATEESGDSRAHSSYLKTKKGQ
+STSRHKKTMVKKVGPDSD
+
+--------------------------------------------------------------
+
+STEP 1 — IDENTIFY Test_sequence_1 WITH BLASTp
+--------------------------------------------------------------
+
+Go to:     blast.ncbi.nlm.nih.gov
+Click:     Protein BLAST (BLASTp)
+Paste:     Test_sequence_1 into the query box
+Settings:
+   Database:  Non-redundant protein sequences (nr)
+   Organism:  leave empty
+   Matrix:    BLOSUM62
+Click:     BLAST
+
+QUESTIONS — BLASTp
+--------------------------------------------------------------
+
+Q1. What protein does BLASTp identify?
+    Write the gene name, full protein name and organism.
+
+Q2. What is the E-value and % identity of the top hit?
+    What do these values tell you about the match?
+
+Q3. Based on BLASTp — from which species does
+    Test_sequence_1 most likely come from?
+
+
+STEP 2 — COMPARE WITH EMBOSS Needle
+--------------------------------------------------------------
+Now align Test_sequence_1 against each TP53 reference
+sequence separately using EMBOSS Needle.
+
+Go to:     www.ebi.ac.uk/Tools/psa/emboss_needle
+
+Run alignment A:  Test_sequence_1  vs  TP53_Homo_sapiens
+Run alignment B:  Test_sequence_1  vs  TP53_Mus_musculus
+
+Settings (both alignments):
+   Sequence type:  Protein
+   Matrix:         BLOSUM62
+   Gap open:       10
+   Gap extend:     0.5
+   Click:          Submit
+
+QUESTIONS — EMBOSS Needle
+--------------------------------------------------------------
+
+Q4. What is the % Identity between Test_sequence_1
+    and human TP53?
+    What is the % Identity against mouse TP53?
+    Which one is higher?
+
+Q5. What is the % Similarity for each alignment?
+    Why is similarity always >= identity?
+
+Q6. Are there any gaps in either alignment?
+    In which region of the protein do they occur?
+
+Q7. Based on your two alignments — can you now confirm
+    the species of origin of Test_sequence_1?
+    Explain your reasoning using the numbers you obtained.
+
+Q8. Look at the region corresponding to the DNA-binding
+    domain (approximately residues 102-292).
+    Is this region more conserved between human and mouse
+    than the N-terminal transactivation domain?
+    What does this tell you about functional constraint?
+
+EXPECTED RESULTS (read after answering)
+--------------------------------------------------------------
+Test_sequence_1 vs Human TP53:  ~100% identity
+Test_sequence_1 vs Mouse TP53:  ~77% identity
+Conclusion: Test_sequence_1 is the human TP53 protein —
+            the most frequently mutated gene in cancer.
+            The DNA-binding domain is the most conserved
+            region between human and mouse.
+
+
+==============================================================
+  PART B — EMBOSS Needle
+  DNA alignment: mutation detection in Test_sequence_2
+==============================================================
+
+BACKGROUND
+--------------------------------------------------------------
+A second colleague sequenced a short DNA fragment from
+a tumor sample. She suspects it may carry a mutation
+compared to the normal TP53 sequence.
+Your mission: align Test_sequence_2 against the reference
+sequence and identify any mutations present.
+
+--------------------------------------------------------------
+SEQUENCES
+--------------------------------------------------------------
+
+> Test_sequence_2 (tumor sample — to analyze)
+ATGGAGGAGCCGCAGTCAGATCCTAGCGTCGAGCCCCCTCTGAGTCAGGAAACATTTTCA
+GACCTATGGAAACTACTTCCTGAAAACAACGTTCTGTCCCCTTGCCGTCCCAAGCAATGG
+ATGATTTGATGCTGTCCCCGGACGATATTGAACAAAGCTGTTCCGTCCCAGTAGATTTCA
+TTGCCACTGCCCTGA
+
+> Reference_sequence (normal TP53 — control)
+ATGGAGGAGCCGCAGTCAGATCCTAGCGTCGAGCCCCCTCTGAGTCAGGAAACATTTTCA
+GACCTATGGAAACTACTTCCTGAAAACAACGTTCTGTCCCCTTGCCGTCCCAAGCAATGG
+ATGATTTGATGCTGTCCCCGGACGATATTGAACAAAGCTGTTCCGTCCCAGTAGATTTCA
+TTGCCACTGCCCCTGA
+
+--------------------------------------------------------------
+
+STEP-BY-STEP INSTRUCTIONS
+--------------------------------------------------------------
+
+Go to:     www.ebi.ac.uk/Tools/psa/emboss_needle
+Sequence A: paste Test_sequence_2
+Sequence B: paste Reference_sequence
+
+Settings:
+   Sequence type:  DNA
+   Matrix:         EDNAFULL
+   Gap open:       10
+   Gap extend:     0.5
+   Click:          Submit
+
+QUESTIONS
+--------------------------------------------------------------
+
+Q1. What is the overall % Identity between
+    Test_sequence_2 and the Reference_sequence?
+
+Q2. Look carefully at the alignment output.
+    Can you spot the exact position where the
+    two sequences differ?
+    What nucleotide is present in the tumor sequence
+    vs. the reference?
+
+Q3. Is this difference a substitution, an insertion,
+    or a deletion?
+    How many nucleotides are involved?
+
+Q4. This mutation affects the reading frame.
+    Is it a frameshift mutation?
+    What happens to the protein after a frameshift?
+
+Q5. The reference sequence ends with: ...CCCCTGA
+    The tumor sequence ends with:     ...CCCTGA
+    Can you identify exactly which nucleotide is missing?
+    At what position does the deletion occur?
+
+Q6. What is the likely consequence of this mutation
+    for TP53 protein function?
+    Would you expect the tumor cells to have
+    functional TP53? Why or why not?
+
+Q7. This type of mutation — a single nucleotide deletion —
+    is commonly found in human cancers.
+    How could a clinician use this information
+    for diagnosis or treatment decisions?
+
+EXPECTED RESULTS (read after answering)
+--------------------------------------------------------------
+Mutation type:   Single nucleotide deletion (frameshift)
+Position:        Near the 3' end of the coding sequence
+Missing base:    One "C" in the ...CCCCT... stretch
+Consequence:     Frameshift → altered stop codon context
+                 → likely non-functional truncated protein
+                 → loss of tumor suppressor activity
+Clinical note:   TP53 frameshift mutations are associated
+                 with Li-Fraumeni syndrome and poor
+                 prognosis in multiple cancer types.
+
+
+==============================================================
+  CONNECTING PART A AND PART B
+==============================================================
+
+After completing both parts, answer these final questions:
+
+FINAL Q1.
+In Part A you used protein sequences.
+In Part B you used DNA sequences.
+Why did you need to change the alignment matrix
+from BLOSUM62 (protein) to EDNAFULL (DNA)?
+What would happen if you used the wrong matrix?
+
+FINAL Q2.
+In Part A, Test_sequence_1 matched human TP53 at ~100%.
+In Part B, Test_sequence_2 has a deletion vs. the reference.
+Could Test_sequence_2 be the DNA that encodes
+Test_sequence_1? Why or why not?
+
+FINAL Q3.
+You identified both a species of origin (Part A) and
+a somatic mutation (Part B) from anonymous sequences.
+This is exactly what clinical sequencing pipelines do
+on a daily basis in precision oncology.
+What additional information would you need to determine
+whether this mutation is somatic (acquired in the tumor)
+or germline (inherited)?
+
+==============================================================
+   Well done — you have just performed mutation detection
+   on TP53, the most frequently mutated gene in cancer.
+==============================================================
