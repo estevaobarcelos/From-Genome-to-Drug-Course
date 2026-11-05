@@ -3,13 +3,21 @@
 #  Species: Human, Mouse, Rabbit, Pig
 # ============================================================
 
+BiocManager::install() # Biostrings
+BiocManager::install() # msa
+
+install.packages() # ape
+install.packages() # pheatmap
+install.packages() # bio3d
+install.packages() # seqinr
+
 # --- 0. Load libraries --------------------------------------
 library(Biostrings)
 library(msa)
 library(ape)
 library(pheatmap)
 library(bio3d)
-
+library(seqinr)
 
 # --- 1. Fetch sequences from UniProt -----------------------
 fetch_seq <- function(acc) {
